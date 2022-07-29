@@ -90,7 +90,11 @@ export default class AppThuKinh extends Component {
         <div key={index}>
           <button
             className="p-0 "
-            style={{ width: 100 }}
+            style={{
+              width: 100,
+              height: 45,
+              border: "0.5px solid rgba(0,0,0,0.3)",
+            }}
             onClick={() => {
               this.setState({
                 src: item.url,
