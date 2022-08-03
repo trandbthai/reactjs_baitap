@@ -114,7 +114,7 @@ export default class AppThuKinh extends Component {
       <div className="bg-app">
         <div style={{ minHeight: "100vh", background: "rgba(0,0,0,0.3)" }}>
           <h3
-            className="text-white py-4"
+            className="text-white py-4 text-center"
             style={{ background: "rgba(0,0,0,0.5)" }}
           >
             TRY GLASSES APP ONLINE
@@ -123,7 +123,7 @@ export default class AppThuKinh extends Component {
             <div className="row px-5">
               <div className="col ml-auto mr-auto d-flex justify-content-center">
                 <div className=" item">
-                  <div>
+                  <div className="text-center">
                     <img src={this.state.src} alt="..." className="glasses" />
                   </div>
                   <div

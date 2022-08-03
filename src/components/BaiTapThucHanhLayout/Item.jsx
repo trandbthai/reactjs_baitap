@@ -46,7 +46,7 @@ export default class Item extends Component {
       return (
         <div className="col-lg-6 col-xxl-4 mb-5" key={index}>
           <div className="card bg-light border-0 h-100">
-            <div className="card-body p-4 p-lg-5 pt-0 pt-lg-0">
+            <div className="card-body p-4 p-lg-5 pt-0 pt-lg-0 text-center">
               <div className="feature bg-primary bg-gradient text-white rounded-3 mb-4 ">
                 <i className={item.icon}></i>
               </div>
