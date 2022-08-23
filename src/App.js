@@ -9,28 +9,35 @@ function App() {
     <div>
       <div className="container">
         <h3 className="text-center mt-4">
-          React Excercises - Thai Dien Bao Tran
+          React Excercises - Thái Điền Bảo Trân
         </h3>
 
         <div className="row mt-4">
-          <div className="col-2">
-            <button className="btn btn-dark mx-2 text-white">
+          <div className=" col-md-2 col-6">
+            <button className="btn btn-dark mx-md-2 my-2 text-white w-100">
               <NavLink className="nav-link" to="/thuchanhlayout">
                 Bài tập TH Layout
               </NavLink>
             </button>
           </div>
-          <div className="col-2">
-            <button className="btn btn-dark mx-2 text-white">
+          <div className="col-md-2 col-6">
+            <button className="btn btn-dark mx-md-2 my-2 text-white w-100">
               <NavLink className="nav-link" to="/thukinh">
                 Bài tập Thử Kính
               </NavLink>
             </button>
           </div>
-          <div className="col-2">
-            <button className="btn btn-dark mx-2 text-white">
+          <div className="col-md-2 col-6">
+            <button className="btn btn-dark mx-md-2 my-2 text-white w-100">
               <NavLink className="nav-link" to="/giohang">
                 Bài tập Giỏ Hàng
+              </NavLink>
+            </button>
+          </div>
+          <div className="col-md-2 col-6">
+            <button className="btn btn-dark mx-md-2 my-2 text-white w-100">
+              <NavLink className="nav-link" to="/reactform">
+                Bài tập React Form
               </NavLink>
             </button>
           </div>

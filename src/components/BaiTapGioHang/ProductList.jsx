@@ -44,7 +44,7 @@ export default class ProductList extends Component {
     let { xemChiTiet, themGioHang } = this.props;
     return data.map((item, index) => {
       return (
-        <div className="col-4" key={index}>
+        <div className="col-md-4 col-sm-12" key={index}>
           <ProductItem
             product={item}
             xemChiTiet={xemChiTiet}

@@ -87,7 +87,7 @@ export default class AppThuKinh extends Component {
     return data.map((item, index) => {
       let i = index;
       return (
-        <div key={index}>
+        <div className="col-lg-2 col-md-4 m-2" key={index}>
           <button
             className="p-0 "
             style={{
@@ -149,9 +149,7 @@ export default class AppThuKinh extends Component {
                 <div className=" item"></div>
               </div>
             </div>
-            <div className="glasses-list mt-5" style={{ height: 200 }}>
-              {this.renderGlasses()}
-            </div>
+            <div className="row glasses-list mt-5">{this.renderGlasses()}</div>
           </div>
         </div>
       </div>

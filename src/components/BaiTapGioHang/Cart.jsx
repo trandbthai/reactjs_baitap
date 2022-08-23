@@ -4,6 +4,9 @@ export default class Cart extends Component {
   showProduct = () => {
     let { modalProductList, xoaGioHang, themSoLuong, giamSoLuong } = this.props;
     return modalProductList.map((product, index) => {
+      const tinhGiaTien = (soLuong, giaBan) => {
+        return soLuong * giaBan;
+      };
       return (
         <tr key={index}>
           <td className="text-center">{product.maSP}</td>
@@ -33,7 +36,7 @@ export default class Cart extends Component {
             </button>
           </td>
           <td>{product.giaBan}</td>
-          <td>600000</td>
+          <td>{tinhGiaTien(product.soLuong, product.giaBan)}</td>
           <td>
             <button
               className="btn btn-danger"

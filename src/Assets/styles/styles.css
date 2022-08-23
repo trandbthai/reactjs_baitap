@@ -36,10 +36,14 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  padding: 30px;
   background: white;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 30px;
   align-items: center;
   text-align: center;
+}
+
+@media (maxwidth: 576px) {
+  .glasses-list {
+    height: 400px;
+  }
 }

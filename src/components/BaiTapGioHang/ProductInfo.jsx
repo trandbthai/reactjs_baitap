@@ -4,12 +4,12 @@ export default class ProductInfo extends Component {
   render() {
     let { product } = this.props;
     return (
-      <div className="d-flex">
-        <div className="w-25 text-center">
+      <div className="row">
+        <div className="col-md-3 text-center">
           <p style={{ fontSize: 20, fontWeight: "bold" }}>{product.tenSP}</p>
           <img src={product.hinhAnh} alt="..." style={{ width: 200 }} />
         </div>
-        <div className="w-75">
+        <div className="col-md-9">
           <h4>Thông số kỹ thuật</h4>
           <table className="table">
             <thead>

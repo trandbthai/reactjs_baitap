@@ -72,7 +72,9 @@ export default class AppGioHang extends Component {
 
     for (let index in newProductList) {
       if (newProductList[index].maSP === productClick.maSP) {
-        if (newProductList[index].soLuong > 0) {
+        if (newProductList[index].soLuong === 1) {
+          this.xoaGioHang(newProductList[index]);
+        } else {
           newProductList[index].soLuong -= 1;
           this.setState({
             modalProductList: newProductList,
