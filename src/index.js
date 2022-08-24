@@ -14,6 +14,7 @@ import AppThucHanhLayout from "./components/BaiTapThucHanhLayout/AppThucHanhLayo
 import AppThuKinh from "./components/BaiTapThuKinh/AppThuKinh";
 import AppGioHang from "./components/BaiTapGioHang/AppGioHang";
 import AppReactForm from "./components/BaiTapReactForm/AppReactForm";
+import AppDatVe from "./components/BaiTapDatVe/AppDatVe";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -25,6 +26,7 @@ root.render(
           <Route path="/thukinh" element={<AppThuKinh />}></Route>
           <Route path="/giohang" element={<AppGioHang />}></Route>
           <Route path="/reactform" element={<AppReactForm />}></Route>
+          <Route path="/datve" element={<AppDatVe />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

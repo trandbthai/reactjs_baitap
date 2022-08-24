@@ -1,18 +1,5 @@
 const stateDefault = {
-  arrSV: [
-    {
-      maSV: "1",
-      name: "Nguyễn Văn A",
-      phone: "0938213213",
-      email: "nguyenvana@gmail.com",
-    },
-    {
-      maSV: "2",
-      name: "Nguyễn Văn B",
-      phone: "0922222222",
-      email: "nguyenvanb@gmail.com",
-    },
-  ],
+  arrSV: [],
   sinhVien: {
     maSV: "",
     name: "",

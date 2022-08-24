@@ -41,6 +41,13 @@ function App() {
               </NavLink>
             </button>
           </div>
+          <div className="col-md-2 col-6">
+            <button className="btn btn-dark mx-md-2 my-2 text-white w-100">
+              <NavLink className="nav-link" to="/datve">
+                Bài tập Đặt vé
+              </NavLink>
+            </button>
+          </div>
         </div>
       </div>
 
