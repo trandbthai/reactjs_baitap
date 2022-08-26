@@ -121,15 +121,12 @@ export const reactFormReducer = (state = stateDefault, action) => {
       if (!searchWord) {
         state.searchArr = [];
       } else {
-        let searchResult = [];
-        for (let item of state.arrSV) {
-          if (
+        let searchResult = state.arrSV.filter(
+          (item) =>
             item.maSV === searchWord ||
             item.name.toLowerCase().includes(searchWord)
-          ) {
-            searchResult.push(item);
-          }
-        }
+        );
+
         state.searchArr = searchResult;
       }
 
