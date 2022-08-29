@@ -51,7 +51,7 @@ function App() {
         </div>
       </div>
 
-      <div className="mt-4" style={{ minHeight: 900 }}>
+      <div className="mt-4">
         <Outlet />
       </div>
     </div>

@@ -5,27 +5,60 @@ import background from "../../Assets/img/movie/bgmovie.jpg";
 export class AppDatVe extends Component {
   renderButton = () => {
     let { data } = this.props.datVeReducer;
-    console.log(data);
     return data.map((item, index) => {
-      return (
-        <div
-          className="d-flex justify-content-between"
-          style={{ fontSize: 30 }}
-          key={index}
-        >
-          <div className="text-white">{item.hang}</div>
-          {item.danhSachGhe.map((ghe, index) => {
-            return (
-              <button className="ghe" key={index}>
-                {ghe.soGhe}
-              </button>
-            );
-          })}
-        </div>
-      );
+      if (item.hang) {
+        return (
+          <div className="d-flex justify-content-between" key={index}>
+            <div className="text-white" style={{ fontSize: 30 }}>
+              {item.hang}
+            </div>
+            {item.danhSachGhe.map((ghe, index) => {
+              let classGheDangChon = ghe.dangDat ? "gheDangChon" : "ghe";
+              let classGheDaChon = ghe.daDat ? "gheDuocChon" : "";
+
+              return (
+                <button
+                  disabled={ghe.daDat}
+                  className={`${classGheDangChon} ${classGheDaChon}`}
+                  key={index}
+                  onClick={(e) => {
+                    const action = {
+                      type: "HANDLE_CLICK",
+                      payload: {
+                        ghe: ghe,
+                      },
+                    };
+                    this.props.dispatch(action);
+                  }}
+                >
+                  {ghe.soGhe}
+                </button>
+              );
+            })}
+          </div>
+        );
+      } else {
+        return (
+          <div
+            className="d-flex justify-content-between"
+            style={{ fontSize: 30 }}
+            key={index}
+          >
+            <div className="text-white">{item.hang}</div>
+            {item.danhSachGhe.map((ghe, index) => {
+              return (
+                <button className="rowNumber" key={index}>
+                  {ghe.soGhe}
+                </button>
+              );
+            })}
+          </div>
+        );
+      }
     });
   };
   render() {
+    let { arrDatGhe } = this.props.datVeReducer;
     return (
       <div
         className="vh-100"
@@ -63,7 +96,7 @@ export class AppDatVe extends Component {
                     <span className="text-white">ghế chưa đặt</span>
                   </div>
                 </div>
-                <table className="mt-4 table table-hover table-bordered">
+                <table className="mt-4 table table-bordered">
                   <thead className="text-white" style={{ fontSize: 24 }}>
                     <tr>
                       <th>Số ghế</th>
@@ -71,15 +104,41 @@ export class AppDatVe extends Component {
                       <th></th>
                     </tr>
                   </thead>
-                  <tbody
-                    className="text-warning"
-                    style={{ fontSize: 16 }}
-                  ></tbody>
+                  <tbody className="text-warning" style={{ fontSize: 16 }}>
+                    {arrDatGhe.map((item, index) => {
+                      return (
+                        <tr key={index} className="">
+                          <td>{item.soGhe}</td>
+                          <td>{item.gia}</td>
+                          <td>
+                            <button
+                              className="btn btn-light px-2"
+                              onClick={() => {
+                                const action = {
+                                  type: "HANDLE_REMOVE",
+                                  payload: {
+                                    ghe: item,
+                                  },
+                                };
+                                this.props.dispatch(action);
+                              }}
+                            >
+                              Hủy
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
                   <tfoot className="text-warning" style={{ fontSize: 16 }}>
                     <tr>
                       <td></td>
                       <td>Tổng tiền</td>
-                      <td>0</td>
+                      <td>
+                        {arrDatGhe.reduce((total, item) => {
+                          return total + item.gia;
+                        }, 0)}
+                      </td>
                     </tr>
                   </tfoot>
                 </table>
